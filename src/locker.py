@@ -22,20 +22,27 @@ def unlock():
     if(not bcrypt.checkpw(user_input.encode('utf-8'), config_data['password'].encode('utf-8'))):
         fail()
     else:
-        os.system('attrib -r -h -s /s /d "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"')
-        os.system('attrib -r -h -s /s /d "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}\*.*"')
-        os.rename("Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}","Private")
-        print(colored("Folder has been unlocked successfully !","green"))
+        try:
+            os.system('attrib -r -h -s /s /d "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"')
+            os.system('attrib -r -h -s /s /d "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}\*.*"')
+            os.rename("Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}","Private")
+            print(colored("Folder has been unlocked successfully !","green"))
+        
+        except PermissionError:
+            print(colored("OOPS ! Looks like anothe application using this directory !\n Close it and try.","red"))
         time.sleep(2)
 
 def makePrivate():
     os.mkdir("Private")
     print(colored("Private folder has been created !","green"))
 def lock():
-    os.rename("Private","Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}")
-    os.system('attrib +r +h +s /s /d "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}\*.*"')
-    os.system('attrib +r +h +s /s /d "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"')
-    print(colored("Folder has been locked !","yellow"))
+    try:
+        os.rename("Private","Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}")
+        os.system('attrib +r +h +s /s /d "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}\*.*"')
+        os.system('attrib +r +h +s /s /d "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"')
+        print(colored("Folder has been locked !","yellow"))
+    except PermissionError:
+        print(colored("OOPS ! Looks like anothe application using this directory !\n Close it and try.","red"))
     time.sleep(2)
 def confirm():
     ensure = input("Are you sure to lock this folder? (Y/N): ")
