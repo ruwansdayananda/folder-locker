@@ -8,7 +8,8 @@ tags: ""
 This program can protect users' data by locking directories with a strong password that the user can define. 
 
 :::note
-This is only tested with Windows 10
+This is only tested with Windows 10 Pro Version	10.0.19042 Build 19042
+
 :::
 
 # 2. Steps to setup
