@@ -14,7 +14,7 @@ This is only tested with Windows 10
 # 2. Steps to setup
 
 1. First, find the **'bin'** directory in this repository and navigate it inside.
-2. Find the executable file of **'locker.exe'**.
+2. Find the executable file of **'locker.exe'**.(Navigate to the folder of latest version)
 3. Download it to your personal computer.
 4. Place it in a directory anywhere you want.
 5. Run the application.
