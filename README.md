@@ -19,7 +19,7 @@ This is only tested with Windows 10 Pro Version	10.0.19042 Build 19042
 3. Download it to your personal computer.
 4. Place it in a directory anywhere you want.
 5. Run the application.
-6. First, it will ask for a master password from you. Would you please give it a strong password?
+6. First, it will ask for a master password from you. Give it a strong password.
 
 
 :::important
